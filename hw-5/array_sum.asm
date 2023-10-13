@@ -12,7 +12,7 @@
 		
 		sltz t2 t1 # Sign of current element
 		sltz t3 t4 # Sign of sum
-		beq t2 t3 overflow_check # Check for overflow if sum and current element have different signs
+		beq t2 t3 overflow_check # Check for overflow if sum and current element have same sign
 		
 	return:
 		add t4 t4 t1 # If there is no overflow, add current number to sum
