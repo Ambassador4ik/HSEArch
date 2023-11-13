@@ -1,0 +1,42 @@
+Enter source string: FooBar
+Enter number of characters to copy: 6
+FooBar
+Operation completed successfully.
+-- program is finished running (0) --
+
+
+Reset: reset completed.
+
+Enter source string: FooBar
+Enter number of characters to copy: 4
+FooB
+Operation completed successfully.
+-- program is finished running (0) --
+
+
+Reset: reset completed.
+
+Enter source string: FooBar
+Enter number of characters to copy: 0
+
+Operation completed successfully.
+-- program is finished running (0) --
+
+
+Reset: reset completed.
+
+Enter source string: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Enter number of characters to copy: 10
+aaaaaaaaaa
+Operation completed successfully.
+-- program is finished running (0) --
+
+
+Reset: reset completed.
+
+Enter source string: FooBar
+Enter number of characters to copy: 10
+FooBar
+
+Operation completed successfully.
+-- program is finished running (0) --
