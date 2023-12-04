@@ -4,7 +4,7 @@
 
 	li a7, 1024
 	mv a0, %path
-	mv a1, %mode
+	li a1 %mode
 	ecall
 	mv %fd, a0
 	
@@ -41,7 +41,7 @@ rs_end:
     lw s2, 8(sp)
     lw s1, 4(sp)
     lw s0, 0(sp)
-    addi sp, sp, -24
+    addi sp, sp, 24
 .end_macro
 
 .macro ALLOC(%size, %pointer)
@@ -66,14 +66,11 @@ rs_end:
     	mv a1, %buffer
     	li a2, %size 
     	ecall 
-    	
-    	ebreak 
+
     	bltz a0 rfp_error
     	blt a0 a2 rfp_full
     	
-    	lui t5 510
-    	
-    	lb t0 t5(%buffer)
+    	lb t0 510(%buffer)
     	beqz t0 rfp_full
     	
     	rfp_not_full: 
@@ -91,4 +88,16 @@ rs_end:
 	rfp_end:
 		lw a0, 0(sp)
 		addi sp, sp, 4
+.end_macro 
+
+.macro COUNT_WORDS(%str, %res)
+	mv a1 %str
+	call counter
+	mv %res a0
+.end_macro 
+
+.macro CLOSE_FILE(%fd)
+	mv a0 %fd
+	li a7 57
+	ecall
 .end_macro 

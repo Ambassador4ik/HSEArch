@@ -1,7 +1,14 @@
+.include "macros/main.m.asm"
 .data 
-	file: .asciz "large.tsv\n"
+	file: .asciz "input"
+	file_out: .asciz "output"
+	str: .asciz "abcd"
 .text 
-	la a1 file
-	li a2 0
-	call read
+.globl main
+main:
+	la s0 file
+	READ(s0)
 	
+	li a7 1
+	ecall
+	EXIT
